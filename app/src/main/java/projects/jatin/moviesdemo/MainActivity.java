@@ -26,6 +26,12 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.base_fragment, new UpcomingMovies()).commit();
 
+        for (int i=0;i<2;i++)
+        {
+
+            // random change for test
+        }
+
         BottomNavigationView bottomNavigationView= (BottomNavigationView) findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
