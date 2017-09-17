@@ -19,6 +19,7 @@ public class CalendarEvent extends AppCompatActivity {
         addCalendarEvent();
     }
 
+
     private void addCalendarEvent() {
         Calendar cal = Calendar.getInstance();
         Intent intent = new Intent(Intent.ACTION_EDIT);
@@ -27,8 +28,9 @@ public class CalendarEvent extends AppCompatActivity {
         intent.putExtra("allDay", true);
         intent.putExtra("rrule", "FREQ=YEARLY");
         intent.putExtra("endTime", cal.getTimeInMillis()+60*60*1000);
-        intent.putExtra("title", "Test Event");
+        intent.putExtra("title", "Watch Movie: "+getIntent().getStringExtra("movie"));
         intent.putExtra("description", "This is a sample description");
         startActivity(intent);
     }
+
 }

@@ -51,6 +51,8 @@ public class UpcomingMoviesAdapter extends RecyclerView.Adapter<UpcomingMoviesAd
         holder.overview.setText("Overview: "+upcomingMoviesModel.getOverview());
 
         Picasso.with(context).load(upcomingMoviesModel.getImage_url()).into(holder.picture);
+
+
         holder.cardlayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +74,7 @@ public class UpcomingMoviesAdapter extends RecyclerView.Adapter<UpcomingMoviesAd
             @Override
             public boolean onLongClick(View v) {
                 Intent i=new Intent(context, CalendarEvent.class);
+                i.putExtra("movie",upcomingMoviesModel.getTitle());
                 context.startActivity(i);
                 return false;
             }

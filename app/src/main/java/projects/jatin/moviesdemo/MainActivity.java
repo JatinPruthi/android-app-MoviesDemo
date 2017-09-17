@@ -1,13 +1,12 @@
 package projects.jatin.moviesdemo;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import projects.jatin.moviesdemo.Fragments.NowPlaying;
 import projects.jatin.moviesdemo.Fragments.TopRatedMovies;
@@ -39,14 +38,12 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId())
                 {
                     case R.id.upcoming:
-                        Toast.makeText(MainActivity.this, "upcoming", Toast.LENGTH_SHORT).show();
                         FragmentManager fm= getSupportFragmentManager();
                         FragmentTransaction ft = fm.beginTransaction();
                         ft.replace(R.id.base_fragment, new UpcomingMovies()).commit();
                         break;
 
                     case R.id.now_playing:
-                        Toast.makeText(MainActivity.this, "Now Playing", Toast.LENGTH_SHORT).show();
                         fm = getSupportFragmentManager();
                         ft = fm.beginTransaction();
                         ft.replace(R.id.base_fragment, new NowPlaying()).commit();
@@ -56,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
                         fm = getSupportFragmentManager();
                         ft = fm.beginTransaction();
                         ft.replace(R.id.base_fragment,new TopRatedMovies()).commit();
-                        Toast.makeText(MainActivity.this, "Top Rated", Toast.LENGTH_SHORT).show();
                         break;
 
                 }
